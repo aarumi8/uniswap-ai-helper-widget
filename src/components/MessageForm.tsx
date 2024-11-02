@@ -10,6 +10,7 @@ const MessageForm: React.FC<MessageFormProps> = () => {
   const { addMessage } = useMessages()
   const [isInIframe, setIsInIframe] = useState(false)
   const [onboardingStep, setOnboardingStep] = useState(0)
+  console.log(onboardingStep);
 
   useEffect(() => {
     setIsInIframe(window !== window.parent)
@@ -54,15 +55,15 @@ const MessageForm: React.FC<MessageFormProps> = () => {
     }
   }
 
-  // Function to notify parent when ready for next step
-  const progressOnboarding = () => {
-    window.parent.postMessage({
-      type: 'PROGRESS_ONBOARDING',
-      payload: {
-        step: onboardingStep
-      }
-    }, '*')
-  }
+  // // Function to notify parent when ready for next step
+  // const progressOnboarding = () => {
+  //   window.parent.postMessage({
+  //     type: 'PROGRESS_ONBOARDING',
+  //     payload: {
+  //       step: onboardingStep
+  //     }
+  //   }, '*')
+  // }
 
   return (
     <div className="relative mx-auto max-w-3xl">
