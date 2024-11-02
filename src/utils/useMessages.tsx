@@ -20,11 +20,11 @@ export function MessagesProvider({ children }: { children: ReactNode }) {
     const initializeChat = () => {
       const systemMessage: ChatCompletionRequestMessage = {
         role: 'system',
-        content: 'You are ChatGPT, a large language model trained by OpenAI.'
+        content: 'You are ChatGPT, a large language model trained by OpenAI. You are an AI assistant for Uniswap - DEX on Ethereum. Answer as much as possible for new users. You are onboarding new users to use Uniswap.'
       }
       const welcomeMessage: ChatCompletionRequestMessage = {
         role: 'assistant',
-        content: 'Hi, How can I help you today?'
+        content: 'Hi! Ask me anything about Uniswap. Here are some questions to get started.'
       }
       setMessages([systemMessage, welcomeMessage])
     }
